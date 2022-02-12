@@ -1,0 +1,77 @@
+﻿@model ExchangeRate.Models.GetDateandExchangeRateList
+@*<div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section"></h2>
+    </div>
+</div>*@
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" id="exchangeForm" asp-action="Index" asp-controller="Home">
+            <div class="form-group border">
+                <label>Mevduat Açılış Tarihi</label>
+                <input type="date" class="form-control" id="start" name="dateStart">
+            
+                <label class="form-label">Döviz Kuru , Tarih : @Model.GetDateandExchangeStart.BuyingExchangeDate</label>
+                <input class="form-control" id="StartBuyingExchangeRate"  readonly="readonly" value="@Model.GetDateandExchangeStart.BuyingExchangeRate" />
+            </div>
+            <div class="form-group border">
+                <label>Mevduat Bitiş Tarihi</label>
+                <input type="date" class="form-control" id="start" name="dateFinish">
+                <label class="form-label">Döviz Kuru , Tarih : @Model.GetDateandExchangeFinish.BuyingExchangeDate</label>
+                <input class="form-control" id="FinishBuyingExchangeRate" readonly="readonly" value="@Model.GetDateandExchangeFinish.BuyingExchangeRate" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success btn-block" value="Kuru Getir" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">Anapara</label>
+            <input class="form-control" type="text" id="ana-para" placeholder="Anaparayı giriniz" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Faiz Oranı</label>
+            <input class="form-control" type="text" id="faiz-orani" placeholder="Faiz Oranını giriniz" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Vade Seçiniz(Gün)</label>
+            <select class="selectpicker" id="vade-gun" aria-label="Default select example">
+                <option selected>Seçiniz</option>
+                <option value="32">32</option>
+                <option value="46">46</option>
+                <option value="55">55</option>
+                <option value="92">92</option>
+                <option value="181">181</option>
+                <option value="365">365</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Stopaj Oranı</label>
+            <input class="form-control" type="text" id="stopaj-orani" value="5" />
+        </div>
+        <div class="form-group btn-block">
+            <input type="submit" class="btn btn-success btn-block" id="mev-hesap" value="Hesapla" />
+        </div>
+    </div>
+    <div class="col-md-4">
+
+
+        <div class="form-group">
+            <label class="form-label">Mevduat Sonu Faiz</label>
+            <label class="form-label mev-sonuc">0</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Mevduat Sonu Net Faiz</label>
+            <label class="form-label mev-net-sonuc">0</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Kur Korumalı Vade Getirisi</label>
+            <label class="form-label kur-net-sonuc">0</label>
+        </div>
+    </div>
+</div>
+
+
+
+
