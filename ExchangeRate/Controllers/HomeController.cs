@@ -49,7 +49,7 @@ namespace ExchangeRate.Controllers
                         BuyingExchangeDate = exchangeFormDate.dateStart,
                         BuyingExchangeRate = GetDateExchange.GetExchangeRate(exchangeFormDate.dateStart)
                     },
-                 new GetExchangeRateFinish
+                 new GetExchangeRateFinish 
                  {
                      BuyingExchangeDate = exchangeFormDate.dateFinish,
                      BuyingExchangeRate = GetDateExchange.GetExchangeRate(exchangeFormDate.dateFinish)
