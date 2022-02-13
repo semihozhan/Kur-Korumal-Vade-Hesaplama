@@ -10,15 +10,18 @@
             <div class="form-group border">
                 <label>Mevduat Açılış Tarihi</label>
                 <input type="date" class="form-control" id="start" name="dateStart">
-            
+
                 <label class="form-label">Döviz Kuru , Tarih : @Model.GetDateandExchangeStart.BuyingExchangeDate</label>
-                <input class="form-control" id="StartBuyingExchangeRate"  readonly="readonly" value="@Model.GetDateandExchangeStart.BuyingExchangeRate" />
+                <input class="form-control" id="StartBuyingExchangeRate" value="@Model.GetDateandExchangeStart.BuyingExchangeRate" />
+                <span class="form-control alert-danger start-kur-error" style="display:none;" >Döviz Kuru bulunamadı, Kur giriniz</span>
             </div>
             <div class="form-group border">
                 <label>Mevduat Bitiş Tarihi</label>
                 <input type="date" class="form-control" id="start" name="dateFinish">
                 <label class="form-label">Döviz Kuru , Tarih : @Model.GetDateandExchangeFinish.BuyingExchangeDate</label>
-                <input class="form-control" id="FinishBuyingExchangeRate" readonly="readonly" value="@Model.GetDateandExchangeFinish.BuyingExchangeRate" />
+                <input class="form-control" id="FinishBuyingExchangeRate"
+                       value="@Model.GetDateandExchangeFinish.BuyingExchangeRate" />
+                <span class="form-control alert-danger finish-kur-error" style="display:none;" >Döviz Kuru bulunamadı, Kur giriniz</span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success btn-block" value="Kuru Getir" />

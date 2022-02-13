@@ -1,6 +1,9 @@
 ﻿$(function () { 
 
     $(document).on('click', '#mev-hesap', function (event) {
+
+
+
         var anaPara = $('#ana-para').val();
         var faizOrani = $('#faiz-orani').val();
         var vadeGun = $("#vade-gun option:selected").val();
@@ -10,8 +13,16 @@
         var FinishExchange = $('#FinishBuyingExchangeRate').val();
 
         var mev = anaPara * faizOrani * vadeGun / 36500;
-
-
+        
+        if (StartExchange === "") {
+            console.log(StartExchange);
+            $(".start-kur-error").css("display", "block")
+        }
+        if (FinishExchange === "") {
+            console.log(FinishExchange);
+            $(".finish-kur-error").css("display", "block")
+        }
+        
         
    
         $('.mev-sonuc').text(mev);
